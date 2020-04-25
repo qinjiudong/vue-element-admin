@@ -11,6 +11,15 @@ Vue.use(ElementUI, {
 
 Vue.config.productionTip = false
 
+router.beforeEach((to, from, next) => {
+    const role = localStorage.getItem('ms_username');
+    if (!role && to.path !== '/login') {
+        next('/login');
+    } else {
+        next();
+    }
+});
+
 new Vue({
     router,
     render: h => h(App)
