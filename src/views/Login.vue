@@ -11,7 +11,7 @@
                 <template slot="prepend">密码</template>
             </el-input>
         </el-form-item>
-        <el-button type="primary" @click="submitForm">login</el-button>
+        <el-button style="width: 250px;" type="primary" @click="submitForm">login</el-button>
     </el-form>
 </template>
 <script>
@@ -30,7 +30,7 @@
                     if (valid) {
                         this.$message.success('登录成功');
                         localStorage.setItem('ms_username', this.param.username);
-                        // this.$router.push('/');
+                        this.$router.push('/');
                     } else {
                         this.$message.error('请输入账号和密码');
                         console.log('error submit!!');
@@ -51,9 +51,5 @@
         margin: 0 auto;
         top: 30%;
         position: relative;
-    }
-
-    .el-button {
-        width: 250px;
     }
 </style>

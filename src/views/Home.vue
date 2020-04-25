@@ -4,7 +4,7 @@
             <el-avatar icon="el-icon-user-solid"></el-avatar>
             {{username}}
 
-             <el-button icon="el-icon-switch-button" circle></el-button>
+            <el-button @click="logout" icon="el-icon-switch-button" circle></el-button>
         </el-header>
         <el-container>
             <el-aside width="200px">
@@ -21,11 +21,17 @@
     export default {
         data() {
             return {
-                username: 'null',
+                username: localStorage.getItem('ms_username'),
             }
         },
         components: {
             vMenu
+        },
+        methods: {
+            logout() {
+                localStorage.removeItem('ms_username');
+                this.$router.push('/login');
+            }
         }
     }
 </script>
@@ -53,7 +59,8 @@
     .el-container {
         height: 100%;
     }
-    .el-button{
+
+    .el-header .el-button {
         position: relative;
         float: right;
         top: 50%;
