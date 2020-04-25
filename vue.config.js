@@ -1,5 +1,6 @@
 module.exports = {
     // 选项...
     outputDir: "docs",
-    publicPath: "./"
+    publicPath: "/vue-element-admin/",
+    productionSourceMap:false
 }
