@@ -1,0 +1,13 @@
+[{
+    "icon": "el-icon-menu",
+    "index": "table1",
+    "title": "基础表格1"
+}, {
+    "icon": "el-icon-menu",
+    "index": "table2",
+    "title": "基础表格2"
+}, {
+    "icon": "el-icon-menu",
+    "index": "table3",
+    "title": "基础表格3"
+}]
