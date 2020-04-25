@@ -1,0 +1,13 @@
+[{
+    "icon": "el-icon-c-scale-to-original",
+    "index": "table1",
+    "title": "基础表格1"
+}, {
+    "icon": "el-icon-tickets",
+    "index": "table2",
+    "title": "基础表格2"
+}, {
+    "icon": "el-icon-mobile",
+    "index": "table3",
+    "title": "基础表格3"
+}]
