@@ -1,5 +1,5 @@
 <template>
-    <el-form :model="param" ref="loginForm">
+    <el-form :model="param" ref="loginForm" class="login-form1">
         <el-form-item required prop="username">
             <el-input v-model="param.username">
                 <template slot="prepend">账户</template>
@@ -29,23 +29,19 @@
                 this.$refs.loginForm.validate(valid => {
                     if (valid) {
                         this.$message.success('登录成功');
-                        localStorage.setItem('ms_username', this.param.username);
+                        localStorage.setItem('username', this.param.username);
                         this.$router.push('/');
                     } else {
-                        this.$message.error('请输入账号和密码');
-                        console.log('error submit!!');
+                        console.log('error');
                         return false;
                     }
                 });
-            },
-            resetForm(formName) {
-                this.$refs[formName].resetFields();
             }
         }
     }
 </script>
 <style>
-    .el-form {
+    .login-form1 {
         width: 250px;
         text-align: center;
         margin: 0 auto;
