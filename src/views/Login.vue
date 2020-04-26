@@ -24,6 +24,7 @@
                 },
             };
         },
+        
         methods: {
             submitForm() {
                 this.$refs.loginForm.validate(valid => {
