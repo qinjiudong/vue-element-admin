@@ -5,7 +5,7 @@
             <el-button @click="logout" icon="el-icon-switch-button" circle class="logout1"></el-button>
         </el-header>
         <el-container>
-            <el-aside width="150px">
+            <el-aside width="">
                 <v-menu></v-menu>
             </el-aside>
 

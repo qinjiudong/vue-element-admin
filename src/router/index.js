@@ -22,11 +22,17 @@ const routes = [{
     }, {
         path: '/table1',
         component: () => import('../views/Table1.vue')
-    }, ]
+    },  {
+        path: '/fleet',
+        component: () => import('../views/Fleet.vue')
+    },{
+        path: '/site',
+        component: () => import('../views/Site.vue')
+    },]
 }]
 
 const router = new VueRouter({
-    mode: 'history',
+    mode: 'hash',
     base: process.env.BASE_URL,
     routes
 })

@@ -1,5 +1,5 @@
 <template>
-    <el-menu router>
+    <el-menu router collapse>
         <el-menu-item v-for="item in menu" :index="item.index" :key="item.index">
             <i :class="item.icon"></i>
             <span slot="title">{{item.title}}</span>

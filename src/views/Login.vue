@@ -19,8 +19,8 @@
         data() {
             return {
                 param: {
-                    username: '',
-                    password: '',
+                    username: 'admin',
+                    password: '123456',
                 },
             };
         },
