@@ -27,10 +27,15 @@
                 username: localStorage.getItem('username'),
             }
         },
+        
+        created(){
+            const currentUser = this.$av.User.current();
+            this.username = currentUser.attributes.username
+        },
 
         methods: {
             logout() {
-                localStorage.removeItem('username');
+                this.$av.User.logOut();
                 this.$router.push('/login');
             }
         }

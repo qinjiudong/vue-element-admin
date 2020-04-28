@@ -19,19 +19,23 @@
         data() {
             return {
                 param: {
-                    username: 'admin',
-                    password: '123456',
+                    username: '',
+                    password: '',
                 },
             };
         },
-        
+
         methods: {
             submitForm() {
                 this.$refs.loginForm.validate(valid => {
                     if (valid) {
-                        this.$message.success('登录成功');
-                        localStorage.setItem('username', this.param.username);
-                        this.$router.push('/');
+                        this.$av.User.logIn(this.param.username, this.param.password).then((user) => {
+                            console.log(user)
+                            this.$message.success('登录成功');
+                            this.$router.push('/index');
+                        }, (error) => {
+                            this.$message.error(String(error));
+                        });
                     } else {
                         console.log('error');
                         return false;
