@@ -1,66 +1,18 @@
 <template>
-    <el-container>
-        <el-header>
-            <el-avatar icon="el-icon-user-solid"></el-avatar>{{username}}
-            <el-button @click="logout" icon="el-icon-switch-button" circle class="logout1"></el-button>
-        </el-header>
-        <el-container>
-            <el-aside width="">
-                <v-menu></v-menu>
-            </el-aside>
-
-            <el-main>
-                <router-view />
-            </el-main>
-        </el-container>
-    </el-container>
+  <div class="home">
+    <img alt="Vue logo" src="../assets/logo.png">
+    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  </div>
 </template>
+
 <script>
-    import vMenu from '../components/Menu.vue';
-    export default {
-        components: {
-            vMenu
-        },
+// @ is an alias to /src
+import HelloWorld from '@/components/HelloWorld.vue'
 
-        data() {
-            return {
-                username: localStorage.getItem('username'),
-            }
-        },
-        
-        created(){
-            const currentUser = this.$av.User.current();
-            this.username = currentUser.attributes.username
-        },
-
-        methods: {
-            logout() {
-                this.$av.User.logOut();
-                this.$router.push('/login');
-            }
-        }
-    }
+export default {
+  name: 'Home',
+  components: {
+    HelloWorld
+  }
+}
 </script>
-<style>
-    .el-header {
-        background-color: cadetblue;
-    }
-
-    .el-avatar {
-        position: relative;
-        top: 50%;
-        transform: translateY(-50%);
-        margin-right: 5px;
-    }
-
-    .el-container {
-        height: 100%;
-    }
-
-    .logout1 {
-        position: relative;
-        float: right;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-</style>

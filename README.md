@@ -1,4 +1,4 @@
-# admin
+# cdn
 
 ## Project setup
 ```

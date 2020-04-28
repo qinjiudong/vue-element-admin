@@ -1,10 +1,12 @@
 module.exports = {
+    // options...
     productionSourceMap: false,
     configureWebpack: {
         externals: {
             'vue': 'Vue',
-            'element-ui': 'ELEMENT',
-            'leancloud-storage':'AV'
+            'vue-router': 'VueRouter',
+            'element-ui':'ELEMENT'
         }
     }
+
 }
