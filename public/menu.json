@@ -10,4 +10,8 @@
     "icon": "el-icon-mobile",
     "index": "site",
     "title": "站点"
+}, {
+    "icon": "el-icon-mobile",
+    "index": "bill",
+    "title": "个人"
 }]

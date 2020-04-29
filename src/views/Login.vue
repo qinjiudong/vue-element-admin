@@ -27,14 +27,17 @@
 
         methods: {
             submitForm() {
+                var Bmob = this.Bmob;
+                var username = this.param.username;
+                var password = this.param.password;
+
                 this.$refs.loginForm.validate(valid => {
                     if (valid) {
-                        this.$av.User.logIn(this.param.username, this.param.password).then((user) => {
-                            console.log(user)
-                            this.$message.success('登录成功');
+                        Bmob.User.login(username, password).then(res => {
+                            console.log(res);
                             this.$router.push('/index');
-                        }, (error) => {
-                            this.$message.error(String(error));
+                        }).catch(err => {
+                            this.$message.error(err.error)
                         });
                     } else {
                         console.log('error');

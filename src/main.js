@@ -4,7 +4,7 @@ import router from './router'
 import ElementUI from 'element-ui'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
-import AV from 'leancloud-storage'
+import Bmob from "hydrogen-js-sdk"
 
 Vue.use(VueAxios, axios)
 Vue.use(ElementUI, {
@@ -14,20 +14,15 @@ Vue.use(ElementUI, {
 
 Vue.config.productionTip = false
 
-Vue.prototype.$av = AV;
-Vue.prototype.$av.init({
-    appId: "sFWcozKAtiRpkdECDuPhvDXF-9Nh9j0Va",
-    appKey: "LRd0bSgJfRjNPeM2FVQfJAvG",
-    serverURL: "https://sfwcozka.lc-cn-e1-shared.com"
-});
+Bmob.initialize("568a05fbd67ab82c", "141096");
+Vue.prototype.Bmob = Bmob
 
 router.beforeEach((to, from, next) => {
-    const currentUser = Vue.prototype.$av.User.current();
-
+    const currentUser = Bmob.User.current();
     if (!currentUser && to.path !== '/login') {
         next('/login');
     } else {
-        if (to.path == '/login' && currentUser) {
+        if (currentUser && to.path == '/login') {
             next('/index');
         }
         next();

@@ -28,6 +28,9 @@ const routes = [{
     },{
         path: '/site',
         component: () => import('../views/Site.vue')
+    },{
+        path: '/bill',
+        component: () => import('../views/Bill.vue')
     },]
 }]
 

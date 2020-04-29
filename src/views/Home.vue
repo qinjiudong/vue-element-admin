@@ -24,18 +24,18 @@
 
         data() {
             return {
-                username: localStorage.getItem('username'),
+                username: '',
             }
         },
-        
-        created(){
-            const currentUser = this.$av.User.current();
-            this.username = currentUser.attributes.username
+
+        created() {
+            const currentUser = this.Bmob.User.current();
+            this.username = currentUser.username
         },
 
         methods: {
             logout() {
-                this.$av.User.logOut();
+                this.Bmob.User.logout();
                 this.$router.push('/login');
             }
         }

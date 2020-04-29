@@ -3,8 +3,7 @@ module.exports = {
     configureWebpack: {
         externals: {
             'vue': 'Vue',
-            'element-ui': 'ELEMENT',
-            'leancloud-storage':'AV'
+            'element-ui': 'ELEMENT'
         }
     }
 }
